@@ -56,8 +56,6 @@ addons:
       - gcc-5
       - g++-5
       - ninja-build
-      - python3-sphinx
-      - build-essential
 
 env:
   global:
@@ -80,7 +78,6 @@ before_script:
   - cmake ${SOURCE_DIR}
     -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
     -DCPACK_GENERATOR=${CPACK_GENERATOR}
-    -DENABLE_DOC=ON
 
 script:
   - cmake --build ${BUILD_DIR} --config ${CMAKE_BUILD_TYPE} --target all

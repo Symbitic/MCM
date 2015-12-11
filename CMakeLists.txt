@@ -38,7 +38,7 @@ else()
         "read-only architecture-independent data")
     mark_as_advanced(SHARE_INSTALL_DIR)
 
-    set(CMAKECONFIG_INSTALL_DIR "${SHARE_INSTALL_DIR}/MCM")
+    set(CMAKECONFIG_INSTALL_DIR "${SHARE_INSTALL_DIR}/MCM/cmake")
 endif()
 
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/CMake/cmake_modules
@@ -58,3 +58,14 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/MCMConfig.cmake
     DESTINATION ${CMAKECONFIG_INSTALL_DIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/MCMConfigVersion.cmake
     DESTINATION ${CMAKECONFIG_INSTALL_DIR})
+
+set(PROJECT_CONTACT "Mutant Engine contributors")
+set(PROJECT_DESCRIPTION "Mutant CMake Modules")
+set(PROJECT_VENDOR "Mutant Engine")
+set(PROJECT_README ${CMAKE_CURRENT_SOURCE_DIR}/README.rst)
+set(PROJECT_LICENSE ${CMAKE_CURRENT_SOURCE_DIR}/COPYING.txt)
+set(PROJECT_LICENSE_NAME "GPLv3")
+set(PROJECT_HOMEPAGE "https://symbitic.github.com/mutant/")
+set(PROJECT_VERSION ${PROJECT_VERSION})
+
+include(CPack)
