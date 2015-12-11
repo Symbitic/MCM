@@ -1,0 +1,54 @@
+################################################################################
+# Copyright (c) 2015 Mutant Engine Contributors.
+#
+# This file is part of MCM.
+#
+# MCM is free software; you can redistribute it and/or modify it under the
+# terms of version 3 of the GNU General Public License, as published by the
+# Free Software Foundation.
+#
+# In addition to the permissions in the GNU General Public License, the authors
+# give you unlimited permission to link the compiled version of MCM into
+# combinations with other programs, and to distribute those combinations
+# without any restriction coming from the use of MCM. The restrictions of the
+# GNU General Public License still apply in other respects.
+#
+# MCM is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# MCM. If not, see <http://www.gnu.org/licenses/>.
+################################################################################
+
+# Top-most .editorconfig file.
+root = true
+
+# Google C++ Style
+[*.{c,cpp,cxx,h,hxx,hpp}]
+charset = utf-8
+indent_style = space
+indent_size = 4
+tab_width = 4
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+max_line_length = 80
+quote_type = single
+c_include_path = include
+curly_bracket_next_line = false
+spaces_around_operators = true
+space_after_control_statements = true
+spaces_in_brackets = false
+
+# Docutils Standard
+[**.rst]
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 3
+
+# No Standard.
+[**.yml, **.css, **.html, **.md]
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2

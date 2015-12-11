@@ -1,0 +1,99 @@
+################################################################################
+# Copyright (c) 2015 Mutant Engine Contributors.
+#
+# This file is part of MCM.
+#
+# MCM is free software; you can redistribute it and/or modify it under the
+# terms of version 3 of the GNU General Public License, as published by the
+# Free Software Foundation.
+#
+# In addition to the permissions in the GNU General Public License, the authors
+# give you unlimited permission to link the compiled version of MCM into
+# combinations with other programs, and to distribute those combinations
+# without any restriction coming from the use of MCM. The restrictions of the
+# GNU General Public License still apply in other respects.
+#
+# MCM is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# MCM. If not, see <http://www.gnu.org/licenses/>.
+################################################################################
+
+# General settings
+set(CPACK_PACKAGE_NAME "@PROJECT_NAME@")
+set(CPACK_PACKAGE_CONTACT "@PROJECT_CONTACT@")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "@PROJECT_README@")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "@PROJECT_DESCRIPTION@")
+set(CPACK_PACKAGE_DIRECTORY "@CMAKE_CURRENT_SOURCE_DIR@/dist")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "@PROJECT_NAME@")
+set(CPACK_PACKAGE_VENDOR "@PROJECT_VENDOR@")
+set(CPACK_PACKAGE_VERSION "@PROJECT_VERSION@")
+set(CPACK_RESOURCE_FILE_LICENSE "@PROJECT_LICENSE@")
+set(CPACK_RESOURCE_FILE_README "@PROJECT_README@")
+set(CPACK_INSTALL_CMAKE_PROJECTS "@CMAKE_BINARY_DIR@;@PROJECT_NAME@;ALL;/")
+set(CPACK_GENERATOR "@CPACK_GENERATOR@")
+set(CPACK_CMAKE_GENERATOR "@CMAKE_GENERATOR@")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "@PROJECT_NAME@")
+set(CPACK_PACKAGE_RELOCATABLE TRUE)
+
+if(WIN32)
+    set(CPACK_SOURCE_GENERATOR "ZIP")
+else()
+    set(CPACK_SOURCE_GENERATOR "TBZ2")
+endif()
+
+set(CPACK_SOURCE_IGNORE_FILES
+    "/\\.git/"
+    "/\\.gitignore"
+    "\\.DS_Store"
+    "/build/"
+    "/dist/"
+)
+
+if(APPLE)
+	set(CPACK_PACKAGE_FILE_NAME "@PROJECT_NAME@-@PROJECT_VERSION@-osx")
+elseif(WIN32)
+	set(CPACK_PACKAGE_FILE_NAME "@PROJECT_NAME@-@PROJECT_VERSION@-win32")
+else()
+	set(CPACK_PACKAGE_FILE_NAME "@PROJECT_NAME@-@PROJECT_VERSION@-linux")
+endif()
+set(CPACK_SOURCE_PACKAGE_FILE_NAME "@PROJECT_NAME@-src-@PROJECT_VERSION@")
+
+# DPKG settings
+set(CPACK_DEBIAN_COMPRESSION_TYPE "xz")
+if("@CMAKE_SYSTEM_PROCESSOR@" STREQUAL "x86_64")
+	set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
+else()
+	set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "@CMAKE_SYSTEM_PROCESSOR@")
+endif()
+set(CPACK_DEBIAN_PACKAGE_DEPENDS
+    "libc6 (>= 2.12), libstdc++6 (>= 4.4.7), cmake (>= 3.0.0)")
+set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "@PROJECT_DESCRIPTION@")
+set(CPACK_DEBIAN_PACKAGE_HOMEPAGE "@PROJECT_HOMEPAGE@")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "@PROJECT_CONTACT@")
+set(CPACK_DEBIAN_PACKAGE_NAME "@PROJECT_NAME@")
+set(CPACK_DEBIAN_PACKAGE_PRIORITY "optional")
+set(CPACK_DEBIAN_PACKAGE_SECTION "devel")
+set(CPACK_DEBIAN_PACKAGE_VERSION "@PROJECT_VERSION@")
+set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
+set(CPACK_DEBIAN_PACKAGE_DEBUG ON)
+set(CPACK_DEBIAN_PACKAGE_RECOMMENDS "Unknown")
+set(CPACK_DEBIAN_PACKAGE_SUGGESTS "Unknown")
+
+# RPM settings
+set(CPACK_RPM_COMPRESSION_TYPE "bzip2")
+set(CPACK_RPM_PACKAGE_ARCHITECTURE "@CMAKE_SYSTEM_PROCESSOR@")
+set(CPACK_RPM_PACKAGE_AUTOREQPROV "OFF")
+set(CPACK_RPM_PACKAGE_DESCRIPTION "@PROJECT_DESCRIPTION@")
+set(CPACK_RPM_PACKAGE_GROUP "Development/Tools")
+set(CPACK_RPM_PACKAGE_LICENSE "@PROJECT_LICENSE_NAME@")
+set(CPACK_RPM_PACKAGE_NAME "@PROJECT_NAME@")
+set(CPACK_RPM_PACKAGE_RELEASE "1")
+set(CPACK_RPM_PACKAGE_REQUIRES
+    "libc.so.6 >= 2.12, libstdc++.so.6 >= 6.0.13, cmake >= 3.0.0")
+set(CPACK_RPM_PACKAGE_SUMMARY "@PROJECT_DESCRIPTION@")
+set(CPACK_RPM_PACKAGE_URL "@PROJECT_HOMEPAGE@")
+set(CPACK_RPM_PACKAGE_VENDOR "@PROJECT_VENDOR@")
+set(CPACK_RPM_PACKAGE_VERSION "@PROJECT_VERSION@")

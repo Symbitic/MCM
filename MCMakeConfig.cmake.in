@@ -1,0 +1,63 @@
+#.rst:
+# MCMConfig
+# ---------
+#
+# CMake :command:`find_package` module for MCM.
+#
+# .. todo:: Add menu/table/etc for links to commands.
+
+################################################################################
+# Copyright (c) 2015 Mutant Engine Contributors.
+#
+# This file is part of Mutant.
+#
+# MCM is free software; you can redistribute it and/or modify it under the
+# terms of version 3 of the GNU General Public License, as published by the
+# Free Software Foundation.
+#
+# In addition to the permissions in the GNU General Public License, the authors
+# give you unlimited permission to link the compiled version of MCM into
+# combinations with other programs, and to distribute those combinations
+# without any restriction coming from the use of MCM. The restrictions of the
+# GNU General Public License still apply in other respects.
+#
+# MCM is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# MCM. If not, see <http://www.gnu.org/licenses/>.
+################################################################################
+
+if(CMAKE_VERSION VERSION_LESS 2.8.13)
+    set(${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE
+        "${CMAKE_FIND_PACKAGE_NAME} requires CMake 3.0.0 or later.")
+    set(${CMAKE_FIND_PACKAGE_NAME}_FOUND FALSE)
+    return()
+endif()
+
+@PACKAGE_INIT@
+
+# Set Mutant CMake directory paths.
+set(MUTANT_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/mutant_modules")
+set(MUTANT_CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
+set(MUTANT_FIND_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/find_modules")
+
+# Add Mutant CMake directories to CMAKE_MODULE_PATH.
+list(INSERT CMAKE_MODULE_PATH 0 "${MUTANT_MODULE_PATH}")
+list(INSERT CMAKE_MODULE_PATH 1 "${MUTANT_CMAKE_MODULE_PATH}")
+list(INSERT CMAKE_MODULE_PATH 2 "${MUTANT_FIND_MODULE_PATH}")
+
+# Import CMake commands.
+include(${MUTANT_MODULE_PATH}/MutantAddHeaders.cmake)
+include(${MUTANT_MODULE_PATH}/MutantAddLibrary.cmake)
+include(${MUTANT_MODULE_PATH}/MutantAddSources.cmake)
+include(${MUTANT_MODULE_PATH}/MutantCheckFunction.cmake)
+include(${MUTANT_MODULE_PATH}/MutantCheckHeader.cmake)
+include(${MUTANT_MODULE_PATH}/MutantConfigureHeader.cmake)
+include(${MUTANT_MODULE_PATH}/MutantPackage.cmake)
+include(${MUTANT_MODULE_PATH}/MutantSetupDocumentation.cmake)
+include(${MUTANT_MODULE_PATH}/MutantSetupVersion.cmake)
+
+# Mark the CMake package as FOUND.
+set(${CMAKE_FIND_PACKAGE_NAME}_FOUND TRUE)

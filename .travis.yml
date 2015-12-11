@@ -1,0 +1,89 @@
+################################################################################
+# Copyright (c) 2015 Mutant Engine Contributors.
+#
+# This file is part of MCM.
+#
+# MCM is free software; you can redistribute it and/or modify it under the
+# terms of version 3 of the GNU General Public License, as published by the
+# Free Software Foundation.
+#
+# In addition to the permissions in the GNU General Public License, the authors
+# give you unlimited permission to link the compiled version of MCM into
+# combinations with other programs, and to distribute those combinations
+# without any restriction coming from the use of MCM. The restrictions of the
+# GNU General Public License still apply in other respects.
+#
+# MCM is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# MCM. If not, see <http://www.gnu.org/licenses/>.
+################################################################################
+
+language: c
+
+sudo: false
+
+os:
+  - linux
+  - osx
+
+compiler:
+  - clang
+
+cache:
+  - apt
+
+notifications:
+  email:
+    recipients:
+      - alex.shaw.as@gmail.com
+    on_success: change
+    on_failure: always
+    on_start: never
+
+addons:
+  apt:
+    sources:
+      - george-edison55-precise-backports
+      - llvm-toolchain-precise-3.6
+      - ubuntu-toolchain-r-test
+    packages:
+      - clang-3.6
+      - cmake
+      - cmake-data
+      - gcc-5
+      - g++-5
+      - ninja-build
+      - python3-sphinx
+      - build-essential
+
+env:
+  global:
+    - CPACK_GENERATOR="TBZ2"
+    - SOURCE_DIR=${PWD}
+    - BUILD_DIR=${SOURCE_DIR}/build
+    - DIST_DIR=${SOURCE_DIR}/dist
+    - TRAVIS_DIR=${SOURCE_DIR}/.travis
+  matrix:
+    - CMAKE_BUILD_TYPE="Debug"
+    - CMAKE_BUILD_TYPE="Release"
+
+matrix:
+  allow_failures:
+    - os: osx
+
+before_script:
+  - mkdir -p ${BUILD_DIR}
+  - cd ${BUILD_DIR}
+  - cmake ${SOURCE_DIR}
+    -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+    -DCPACK_GENERATOR=${CPACK_GENERATOR}
+    -DENABLE_DOC=ON
+
+script:
+  - cmake --build ${BUILD_DIR} --config ${CMAKE_BUILD_TYPE} --target all
+
+after_success:
+  - cmake --build ${BUILD_DIR} --target package
