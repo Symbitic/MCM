@@ -68,10 +68,6 @@ env:
     - CMAKE_BUILD_TYPE="Debug"
     - CMAKE_BUILD_TYPE="Release"
 
-matrix:
-  allow_failures:
-    - os: osx
-
 before_script:
   - mkdir -p ${BUILD_DIR}
   - cd ${BUILD_DIR}
