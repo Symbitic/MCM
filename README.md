@@ -62,7 +62,7 @@ MCM is distributed under the terms of version 3 of the
 
 [travis_img]: https://img.shields.io/travis/Symbitic/MCM.svg?style=flat-square&label=Build
 
-[travis_url]: https://travis-ci.org/Symbitic/CBuild
+[travis_url]: https://travis-ci.org/Symbitic/MCM
 
 [license_img]: https://img.shields.io/github/license/Symbitic/MCM.svg?style=flat-square&label=License
 
