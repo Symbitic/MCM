@@ -64,7 +64,7 @@
 #    check_required_components(Foo)
 
 ################################################################################
-# Copyright (c) 2015 Mutant Engine Contributors.
+# Copyright (c) 2015-2016 Mutant Engine Contributors.
 #
 # This file is part of MCM.
 #
@@ -85,6 +85,8 @@
 # You should have received a copy of the GNU General Public License along with
 # MCM. If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
+
+# Parts of this file are inspired by CMakePackageConfigHelpers.cmake
 
 include(${CMAKE_ROOT}/Modules/CMakeParseArguments.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/CMakeInstallLibdir.cmake)

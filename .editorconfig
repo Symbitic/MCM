@@ -1,5 +1,5 @@
 ################################################################################
-# Copyright (c) 2015 Mutant Engine Contributors.
+# Copyright (c) 2015-2016 Mutant Engine Contributors.
 #
 # This file is part of MCM.
 #
@@ -21,34 +21,38 @@
 # MCM. If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
 
-# Top-most .editorconfig file.
+# Top-most .editorconfig file
 root = true
 
-# Google C++ Style
+# Default settings
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+tab_width = 4
+trim_trailing_whitespace = true
+
+# C/C++
 [*.{c,cpp,cxx,h,hxx,hpp}]
 charset = utf-8
-indent_style = space
-indent_size = 4
-tab_width = 4
+c_include_path = include
+curly_bracket_next_line = false
 end_of_line = lf
-trim_trailing_whitespace = true
+indent_size = 4
+indent_style = space
 insert_final_newline = true
 max_line_length = 80
 quote_type = single
-c_include_path = include
-curly_bracket_next_line = false
-spaces_around_operators = true
 space_after_control_statements = true
+spaces_around_operators = true
 spaces_in_brackets = false
-
-# Docutils Standard
-[**.rst]
+tab_width = 4
 trim_trailing_whitespace = true
-indent_style = space
-indent_size = 3
 
-# No Standard.
-[**.yml, **.css, **.html, **.md]
-trim_trailing_whitespace = true
+# Markdown
+[*.md]
+indent_size = 4
 indent_style = space
-indent_size = 2
+trim_trailing_whitespace = false

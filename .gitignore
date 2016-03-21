@@ -1,5 +1,5 @@
 ################################################################################
-# Copyright (c) 2015 Mutant Engine Contributors.
+# Copyright (c) 2015-2016 Mutant Engine Contributors.
 #
 # This file is part of MCM.
 #
@@ -28,7 +28,10 @@ build/
 dist/
 
 # Temporary data
-tmp/
+/tmp/
+/[Bb]uild*/
+/[Bb]inary/
+README.html
 
 # Generated documentation files
 .buildinfo
@@ -69,15 +72,7 @@ Icon
 # Linux metadata
 .directory
 *~
-
-# Logs
-logs/
-*.log
-
-# Runtime data
-pids
-*.pid
-*.seed
+*.kdev4
 
 # Code Coverage
 lib-cov
@@ -167,3 +162,5 @@ local.properties
 *.bak
 *.swp
 *.pem
+*.pid
+*.seed

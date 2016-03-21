@@ -15,7 +15,7 @@
 #  Version of Sphinx detected.
 
 ################################################################################
-# Copyright (c) 2015 Mutant Engine Contributors.
+# Copyright (c) 2015-2016 Mutant Engine Contributors.
 #
 # This file is part of MCM.
 #

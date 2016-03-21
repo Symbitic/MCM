@@ -5,7 +5,7 @@
 # Define the variable ``CMAKE_INSTALL_LIBDIR`` (if not already set).
 
 ################################################################################
-# Copyright (c) 2015 Mutant Engine Contributors.
+# Copyright (c) 2015-2016 Mutant Engine Contributors.
 #
 # This file is part of MCM.
 #
