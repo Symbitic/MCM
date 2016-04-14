@@ -1,10 +1,9 @@
-#.rst:
 # MCMConfig
-# ---------
+# =========
 #
-# CMake :command:`find_package` module for MCM.
+# CMake `find_package` module for MCM.
 #
-# .. todo:: Add menu/table/etc for links to commands.
+# TODO: Add menu/table/etc for links to commands.
 
 ################################################################################
 # Copyright (c) 2015-2016 Mutant Engine Contributors.
@@ -39,16 +38,13 @@ endif()
 @PACKAGE_INIT@
 
 # Set Mutant CMake directory paths.
-set(MUTANT_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/mutant_modules")
-set(MUTANT_CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
-set(MUTANT_FIND_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/find_modules")
+set(MUTANT_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}")
 
 # Add Mutant CMake directories to CMAKE_MODULE_PATH.
 list(INSERT CMAKE_MODULE_PATH 0 "${MUTANT_MODULE_PATH}")
-list(INSERT CMAKE_MODULE_PATH 0 "${MUTANT_CMAKE_MODULE_PATH}")
-list(INSERT CMAKE_MODULE_PATH 0 "${MUTANT_FIND_MODULE_PATH}")
 
 # Import CMake commands.
+include(${MUTANT_MODULE_PATH}/MutantAddDocumentation.cmake)
 include(${MUTANT_MODULE_PATH}/MutantAddHeaders.cmake)
 include(${MUTANT_MODULE_PATH}/MutantAddLibrary.cmake)
 include(${MUTANT_MODULE_PATH}/MutantAddSources.cmake)

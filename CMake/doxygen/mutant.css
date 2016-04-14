@@ -1,0 +1,140 @@
+/*
+ *******************************************************************************
+ * Copyright (c) 2015-2016 Mutant Engine Contributors.
+ *
+ * This file is part of Mutant Engine.
+ *
+ * Mutant Engine is free software; you can redistribute it and/or modify it
+ * under the terms of version 3 of the GNU General Public License, as published
+ * by the Free Software Foundation.
+ *
+ * In addition to the permissions in the GNU General Public License, the authors
+ * give you unlimited permission to link the compiled version of Mutant Engine
+ * into combinations with other programs, and to distribute those combinations
+ * without any restriction coming from the use of Mutant Engine. The
+ * restrictions of the GNU General Public License still apply in other respects.
+ *
+ * Mutant Engine is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * Mutant Engine. If not, see <http://www.gnu.org/licenses/>.
+ *******************************************************************************
+ */
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+#titlearea {
+    border-bottom: 0px;
+}
+
+.tabs, .tabs2, .tabs3 {
+    width: 100%;
+    z-index: 101;
+    font-size: 13px;
+}
+
+.tabs2 {
+    font-size: 10px;
+}
+
+.tabs2 li {
+    margin-top: 8px;
+}
+
+.tabs3 {
+    font-size: 9px;
+}
+
+.tabs3 li {
+    margin-top: 8px;
+}
+
+.tablist {
+    margin: 0;
+    padding: 0;
+    display: table;
+}
+
+.tablist li {
+    float: left;
+    display: table-cell;
+    line-height: 36px;
+    list-style: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.tablist a {
+    display: block;
+    padding: 0 20px;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: right;
+    text-decoration: none;
+    outline: none;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+
+.tabs3 .tablist a {
+    padding: 0 10px;
+}
+
+.tablist a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.tablist li.current a {
+    color: #FFFFFF;
+}
+
+/* Blue tabs, with light-blue background. */
+
+hr {
+    border-color: #CCCCFF;
+}
+
+.tabs, .tabs2, .tabs3 {
+    background-color: #CCCCFF;
+}
+
+.tablist a {
+    color: #283A5D;
+}
+
+.tablist a:hover {
+    background-color: #283A5D;
+}
+
+.tablist li.current a {
+    background-color: #7365F8;
+}
+
+/* Green tabs, with black background. */
+/*
+hr {
+    border-color: #000000;
+}
+
+.tabs, .tabs2, .tabs3 {
+    background-color: #000000;
+}
+
+.tablist a {
+    color: #FFFFFF;
+}
+
+.tablist a:hover {
+    background-color: #15E86E;
+}
+
+.tablist li.current a {
+    background-color: #15E86E;
+}
+*/

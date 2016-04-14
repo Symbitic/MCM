@@ -1,0 +1,66 @@
+<doxygenlayout version="1.0">
+  <navindex>
+    <tab type="mainpage" visible="yes" title="@PROJECT_NAME@" />
+    <tab type="modules" visible="yes" title="API" intro="Public API for @PROJECT_NAME@:" />
+    <tab type="pages" visible="yes" title="Documentation" intro="@PROJECT_NAME@ Documentation:" />
+  </navindex>
+
+  <class>
+    <briefdescription visible="yes" />
+    <memberdecl>
+      <publictypes title="Types" />
+      <publicattributes title="Attributes" />
+      <publicstaticattributes title="Static Attributes" />
+      <publicmethods title="Methods" />
+      <publicstaticmethods title="Static Methods" />
+      <signals title="Signals" />
+      <publicslots title="Slots" />
+      <properties title="Properties" />
+    </memberdecl>
+    <detaileddescription title="" />
+    <memberdef>
+      <typedefs title="Typedefs" />
+      <enums title="Enums" />
+      <interfaces title="Interfaces" />
+      <constructors title="Constructors" />
+      <functions title="Functions" />
+      <variables title="Variables" />
+      <properties title="Properties" />
+    </memberdef>
+    <allmemberslink visible="yes" />
+    <authorsection visible="yes" />
+  </class>
+
+  <group>
+    <briefdescription visible="yes"/>
+    <memberdecl>
+      <nestedgroups visible="yes" title="" />
+      <classes title="Classes" />
+      <defines title="Macros" />
+      <typedefs title="Typedefs" />
+      <enums title="Enums" />
+      <functions title="Functions" />
+      <variables title="Variables" />
+      <signals title="Signals" />
+      <publicslots title="Slots" />
+      <properties title="Properties" />
+      <friends title="Friends" />
+      <membergroups visible="yes" />
+    </memberdecl>
+    <detaileddescription title="" />
+    <memberdef>
+      <pagedocs />
+      <inlineclasses title="Inline Classes" />
+      <defines title="Macros" />
+      <typedefs title="Typedefs" />
+      <enums title="Enums" />
+      <functions title="Functions" />
+      <variables title="Variables" />
+      <signals title="Signals" />
+      <publicslots title="Slots" />
+      <properties title="Properties" />
+      <friends title="Friends" />
+    </memberdef>
+    <authorsection visible="yes"/>
+  </group>
+</doxygenlayout>

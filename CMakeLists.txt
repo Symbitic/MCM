@@ -31,6 +31,13 @@ include(CMakePackageConfigHelpers)
 
 project(MCM LANGUAGES NONE VERSION 0.0.1)
 
+option(ENABLE_DOC "Build the documentation" OFF)
+option(INSTALL_DOC "Install the documentation" OFF)
+
+if(ENABLE_DOC)
+    add_subdirectory(doc)
+endif()
+
 if(WIN32)
     set(CMAKECONFIG_INSTALL_DIR "MCM/CMake")
 else()
@@ -41,11 +48,7 @@ else()
     set(CMAKECONFIG_INSTALL_DIR "${SHARE_INSTALL_DIR}/MCM/cmake")
 endif()
 
-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/CMake/cmake_modules
-    DESTINATION ${CMAKECONFIG_INSTALL_DIR})
-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/CMake/find_modules
-    DESTINATION ${CMAKECONFIG_INSTALL_DIR})
-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/CMake/mutant_modules
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/CMake/
     DESTINATION ${CMAKECONFIG_INSTALL_DIR})
 
 configure_package_config_file(MCMConfig.cmake.in MCMConfig.cmake
